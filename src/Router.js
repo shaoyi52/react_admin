@@ -1,15 +1,15 @@
-import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Layout from "./pages/Layout";
-const BaseRoute = () => {
-  return (
-    <HashRouter>
-      <Switch>
-        <Route exact path="/" component={Layout}></Route>
-      </Switch>
-    </HashRouter>
-  );
-};
+import AsyncComponent from "./utils/asyncComponent";
+const path = require("path");
+const files = require.context("./pages", true, /\.js$/);
+const modules = {};
+files.keys().forEach((key) => {
+  const name = path.basename(key, ".js");
+  modules[name] = files(key).default || files(key);
+});
+console.log(modules);
+const Home = AsyncComponent(() => import("./pages/Home"));
+const Layout = AsyncComponent(() => import("./pages/Layout"));
 
-export default BaseRoute;
+const routes = [{ path: "/", component: Layout }];
+
+export default routes;

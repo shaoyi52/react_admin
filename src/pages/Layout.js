@@ -1,9 +1,12 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
+import NotFound from "./NotFound";
+
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-export default class Home extends React.Component {
+
+export default class LayoutPage extends React.Component {
   state = {
     collapsed: false,
   };
@@ -15,6 +18,7 @@ export default class Home extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Layout>
         <Sider
@@ -43,7 +47,9 @@ export default class Home extends React.Component {
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}
               >
-                content
+                <Switch>
+                  <Route path="/notfound" component={NotFound} />
+                </Switch>
               </div>
             </Content>
             <Footer style={{ textAlign: "center" }}>

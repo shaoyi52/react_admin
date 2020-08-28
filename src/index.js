@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { HashRouter, Router, Switch, hashHistory } from "react-router-dom";
+
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -8,7 +10,8 @@ import { Provider } from "react-redux"; // 利用Provider可以使我们的 stor
 import { createStore } from "redux";
 //import pageMainReducer from "./stores/reducer";
 import todoApp from "./toDoStores";
-import Router from "./Router";
+import routes from "./Router";
+import renderRoutes from "./utils/renderRoutes";
 let store = createStore(todoApp); //
 //import finalCreateStore from './src/store/configureStore'  //引入store配置
 
@@ -20,7 +23,9 @@ let store = createStore(todoApp); //
 ); */
 ReactDOM.render(
   <Provider store={store}>
-    <Router />
+    <HashRouter>
+      <Switch>{renderRoutes(routes)}</Switch>
+    </HashRouter>
   </Provider>,
   document.getElementById("root")
 );
