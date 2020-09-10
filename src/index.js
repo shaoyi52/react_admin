@@ -5,14 +5,14 @@ import { HashRouter, Router, Switch, hashHistory } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-//import { HashRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux"; // 利用Provider可以使我们的 store 能为下面的组件所用
 import { createStore } from "redux";
 //import pageMainReducer from "./stores/reducer";
-import todoApp from "./toDoStores";
+//import todoApp from "./toDoStores";
+import routerStore from "./routerStore/reducer";
 import routes from "./Router";
 import renderRoutes from "./utils/renderRoutes";
-let store = createStore(todoApp); //
+let store = createStore(routerStore); //
 //import finalCreateStore from './src/store/configureStore'  //引入store配置
 
 /* ReactDOM.render(
@@ -24,7 +24,8 @@ let store = createStore(todoApp); //
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
-      <Switch>{renderRoutes(routes)}</Switch>
+      {renderRoutes(routes)}
+      {/* <Switch>{renderRoutes(routes)}</Switch> */}
     </HashRouter>
   </Provider>,
   document.getElementById("root")
