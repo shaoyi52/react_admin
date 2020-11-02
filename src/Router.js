@@ -9,12 +9,14 @@ files.keys().forEach((key) => {
 console.log(modules);
 const Home = AsyncComponent(() => import("./pages/Home"));
 const Layout = AsyncComponent(() => import("./pages/Layout"));
+const Login = AsyncComponent(() => import("./pages/Login/index"));
+
 const SecondLevelComponent = AsyncComponent(() =>
   import("./common/SecondLevelComponent")
 );
 
 const routes = [
-  { path: "/home", component: Home },
+  { path: "/login", component: Login },
   {
     path: "/layout",
     component: Layout,
@@ -76,10 +78,41 @@ const routes = [
             name: "技巧7",
             icon: "github",
           },
+          {
+            path: "/layout/oneTen/eight",
+            pathName: "eight",
+            component: modules.eight,
+            name: "技巧8",
+            icon: "github",
+          },
+          {
+            path: "/layout/oneTen/nine",
+            pathName: "nine",
+            component: modules.nine,
+            name: "技巧9",
+            icon: "github",
+          },
+        ],
+      },
+      {
+        path: "/layout/demo",
+        component: SecondLevelComponent,
+        pathName: "demo",
+        name: "demos",
+        icon: "github",
+        children: [
+          {
+            path: "/layout/demo/tableList",
+            pathName: "tableList",
+            component: modules.tableList,
+            name: "高级表格",
+            icon: "github",
+          },
         ],
       },
     ],
   },
+  { path: "/home", exact: true, component: Home },
 ];
 
 export default routes;

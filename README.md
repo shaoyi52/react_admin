@@ -1,3 +1,45 @@
+## 任务单
+
+- [ ] 1.CRUD 模板页
+- [ ] 公共数据请求方法
+- [ ] mock 数据请求方法
+- [x] Redux 用法
+- [x] 路由文件自加载
+- [ ] webpack chunk 代码分割
+- [ ] HOC 组件
+- [ ] 双向绑定
+- [ ] css 结构
+- [ ] webpack 打包优化
+- [ ] Web Workers
+- [ ] Ts 引入
+- [ ] scp2 自动部署 =》前端自动化构建历程
+- [ ] Hooks [useState](http://zhuanlan.zhihu.com/p/65773322)
+
+## 目标：
+
+react+ts+redux+scss
+现了请求模块化+严格的代码规范配置+jekins 和 docker 自动化部署。
+
+## 参考资料
+
+[React 开发基本技巧](https://juejin.im/post/6844903993278201870)
+[antdPro](http://pro.ant.design/)
+
+## 关于 redux
+
+### 使用库 redux
+
+#### 使用接口方法
+
+#### 使用包
+
+
+1. createStore
+```
+##npm install concurrently -g //用于同时启动多个命令
+```
+## 通过 Create React App 创建基楚架构
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,6 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Router, Switch, hashHistory } from "react-router-dom";
+import {
+  HashRouter,
+  Redirect,
+  Route,
+  Router,
+  Switch,
+  hashHistory,
+} from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
@@ -25,6 +32,7 @@ ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
       {renderRoutes(routes)}
+      <Route path="/" exact render={() => <Redirect to="/login" />} />
       {/* <Switch>{renderRoutes(routes)}</Switch> */}
     </HashRouter>
   </Provider>,

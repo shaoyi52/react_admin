@@ -1,0 +1,19 @@
+.wrapper_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-content: center; */
+  height: 100%;
+  background: #ddd;
+}
+.login-title {
+  color: #1890ff;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  background: #eee;
+  margin-bottom: 15px;
+}
+.wrapper_login .ant-form-item-control-input-content {
+  text-align: center;
+}

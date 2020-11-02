@@ -1,3 +1,4 @@
+import fetch from "./fetch";
 import React from "react";
 import { Menu, Icon, Breadcrumb, Select } from "antd";
 import { Link } from "react-router-dom";
@@ -6,8 +7,7 @@ const Option = Select.Option;
 const { SubMenu } = Menu;
 const MenuItem = Menu.Item;
 //获取侧边栏Item
-export const getMenuItem = (list) => {
-  console.log("get");
+export function getMenuItem(list) {
   return list.map((item, index) => {
     if (item.children && item.children.length > 0) {
       return (
@@ -34,13 +34,14 @@ export const getMenuItem = (list) => {
       );
     }
   });
-};
+}
 
-export const filterRoutes = (pathName) => {
+export function filterRoutes(pathName) {
   const pathSnippets = pathName.split("/").filter((path) => path);
   let paths = pathSnippets.map(
     (path, index) => `/${pathSnippets.slice(0, index + 1).join("/")}`
   );
   paths.splice(0, 1);
   return paths;
-};
+}
+export default { fetch, getMenuItem, filterRoutes };

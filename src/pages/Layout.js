@@ -44,7 +44,7 @@ class LayoutPage extends React.Component {
     const defaultOpenKeys = filterRoutes(path);
 
     return (
-      <Layout>
+      <Layout className="layoutWrap">
         <Sider
           collapsible
           collapsed={this.state.collapsed}
@@ -94,4 +94,5 @@ class LayoutPage extends React.Component {
     );
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(LayoutPage);

@@ -137,6 +137,7 @@ module.exports = function (webpackEnv) {
         ? "source-map"
         : false
       : isEnvDevelopment && "cheap-module-source-map",
+
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
     entry: [
@@ -509,6 +510,7 @@ module.exports = function (webpackEnv) {
             // Make sure to add the new loader(s) before the "file" loader.
           ],
         },
+        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
       ],
     },
     plugins: [
@@ -669,5 +671,24 @@ module.exports = function (webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
+    devServer: {
+      contentBase: "./dist/",
+      proxy: {
+        //'/v1/*': 'http://192.168.2.12:8016',
+        //'/v2/*': 'http://dev-gs.aierp.cn:8089',
+        "/v2/*": {
+          target: "http://test-gs.bj.jchl.com:8089",
+          changeOrigin: true,
+        },
+        "/v1/*": {
+          target: "http://test-gs.bj.jchl.com:8089",
+          changeOrigin: true,
+        },
+        /* '/v1/*': 'http://192.168.2.5:8016',
+              '/v2/*': 'http://192.168.2.5:8016', */
+        "/share-oss/*": "http://debug.aierp.cn:8088/",
+        //'/v1/*': 'http://127.0.0.1:8008/'
+      },
+    },
   };
 };
