@@ -26,6 +26,9 @@ export const permissionAction = (path) => {
     "nine",
     "demo",
     "tableList",
+    "TodoList",
+    "customerManage",
+    "help",
   ];
   console.log("routes:", routes);
   const allList = routes[1].children;

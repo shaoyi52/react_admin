@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Todos from "./components/App";
+import Todos from "./component/App";
 //import Home from "./containers/Home";
 function App() {
   return (

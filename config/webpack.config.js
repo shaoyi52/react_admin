@@ -291,6 +291,7 @@ module.exports = function (webpackEnv) {
         .map((ext) => `.${ext}`)
         .filter((ext) => useTypeScript || !ext.includes("ts")),
       alias: {
+        // 减少使用别名提高编译速速
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         "react-native": "react-native-web",
@@ -300,6 +301,12 @@ module.exports = function (webpackEnv) {
           "scheduler/tracing": "scheduler/tracing-profiling",
         }),
         ...(modules.webpackAliases || {}),
+        "@utils": paths.appSrc + "/utils",
+        "@redux": paths.appSrc + "/redux",
+        "@apis": paths.appSrc + "/apis",
+        "@ajax": paths.appSrc + "/config/ajax.js",
+        "@config": paths.appSrc + "/config/config.js",
+        "@component": paths.appSrc + "/component/index.js",
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -684,6 +691,7 @@ module.exports = function (webpackEnv) {
           target: "http://test-gs.bj.jchl.com:8089",
           changeOrigin: true,
         },
+
         /* '/v1/*': 'http://192.168.2.5:8016',
               '/v2/*': 'http://192.168.2.5:8016', */
         "/share-oss/*": "http://debug.aierp.cn:8088/",

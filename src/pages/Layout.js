@@ -9,8 +9,9 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 const mapStateToProps = (state, ownProps) => {
+  console.log({ ...state });
   return {
-    state: { ...state },
+    state: { ...state.router },
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -37,8 +38,6 @@ class LayoutPage extends React.Component {
   };
 
   render() {
-    console.log(this.props);
-
     const path = this.props.location.pathname;
     const { permissionList } = this.props.state;
     const defaultOpenKeys = filterRoutes(path);
@@ -63,7 +62,7 @@ class LayoutPage extends React.Component {
             >
               Header
             </Header>
-            <Content style={{ margin: "24px 16px 0" }}>
+            <Content>
               <div
                 className="site-layout-background"
                 style={{ padding: 24, minHeight: 360 }}

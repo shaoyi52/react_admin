@@ -5,7 +5,7 @@ import NotFound from "../pages/NotFound";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    state: { ...state },
+    state: { ...state.router },
   };
 };
 

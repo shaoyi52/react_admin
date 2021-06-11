@@ -268,8 +268,7 @@ export default class TableList extends React.Component {
     let { visible } = this.state;
     return (
       <React.Fragment>
-        <div className="page-header">查询表格</div>
-        <Card bordered={false} className="tableWrap">
+        <Card bordered={false}>
           <FilterForm></FilterForm>
           <div className="tableOption">
             {" "}

@@ -16,10 +16,11 @@ import { Provider } from "react-redux"; // 利用Provider可以使我们的 stor
 import { createStore } from "redux";
 //import pageMainReducer from "./stores/reducer";
 //import todoApp from "./toDoStores";
-import routerStore from "./routerStore/reducer";
+//import routerStore from "./routerStore/reducer";
+import rootStore from "./redux/reducers";
 import routes from "./Router";
 import renderRoutes from "./utils/renderRoutes";
-let store = createStore(routerStore); //
+let store = createStore(rootStore); //
 //import finalCreateStore from './src/store/configureStore'  //引入store配置
 
 /* ReactDOM.render(

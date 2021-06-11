@@ -10,7 +10,10 @@ console.log(modules);
 const Home = AsyncComponent(() => import("./pages/Home"));
 const Layout = AsyncComponent(() => import("./pages/Layout"));
 const Login = AsyncComponent(() => import("./pages/Login/index"));
-
+const CustomerManage = AsyncComponent(() =>
+  import("./pages/customer/customerMange/index")
+);
+const Help = AsyncComponent(() => import("./pages/Help/index.tsx"));
 const SecondLevelComponent = AsyncComponent(() =>
   import("./common/SecondLevelComponent")
 );
@@ -106,6 +109,27 @@ const routes = [
             pathName: "tableList",
             component: modules.tableList,
             name: "高级表格",
+            icon: "github",
+          },
+          {
+            path: "/layout/demo/VisibleTodoList",
+            pathName: "TodoList",
+            component: modules.todoPage,
+            name: "TodoList",
+            icon: "github",
+          },
+          {
+            path: "/layout/demo/customerManage",
+            pathName: "customerManage",
+            component: CustomerManage,
+            name: "customerManage",
+            icon: "github",
+          },
+          {
+            path: "/layout/demo/help",
+            pathName: "help",
+            component: Help,
+            name: "help",
             icon: "github",
           },
         ],

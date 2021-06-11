@@ -11,7 +11,7 @@
 - [ ] css 结构
 - [ ] webpack 打包优化
 - [ ] Web Workers
-- [ ] Ts 引入
+- [x] Ts 引入
 - [ ] scp2 自动部署 =》前端自动化构建历程
 - [ ] Hooks [useState](http://zhuanlan.zhihu.com/p/65773322)
 
@@ -33,11 +33,19 @@ react+ts+redux+scss
 
 #### 使用包
 
+react-grid-layout
+React DnD //拖放库
 
 1. createStore
+
 ```
 ##npm install concurrently -g //用于同时启动多个命令
 ```
+
+#### 参考资料
+
+1. [表头拖拽功能](https://blog.csdn.net/weixin_43777074/article/details/106491709)
+
 ## 通过 Create React App 创建基楚架构
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,8 +1,15 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { Form, Icon, Input, Button } from "antd";
+import { login } from "@apis/common";
 import "./index.css";
 class NormalLoginForm extends React.Component {
+  componentDidMount() {
+    login({ name: "yuyi" }, (res) => {
+      console.log(res);
+    });
+  }
+
   onFinish = (values) => {
     console.log("Success:", values);
     this.props.history.push("/layout");
