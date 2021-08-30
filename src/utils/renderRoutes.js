@@ -8,6 +8,7 @@ const renderRoutes = (routes, extraProps = {}, switchProps = {}) =>
           key={route.key || i}
           path={route.path}
           exact={route.exact}
+          //component={route.component}
           render={(props) => {
             return <route.component {...props} {...extraProps} />;
           }}

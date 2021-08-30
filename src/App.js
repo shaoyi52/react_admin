@@ -1,29 +1,22 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Todos from "./component/App";
-//import Home from "./containers/Home";
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Todos />
-        {/* <Home /> */}
-      </header>
-    </div>
-  );
+import React,{Suspense} from "react";
+import { Spin } from "antd";
+import {
+    HashRouter,
+    Redirect,
+    Route, 
+  } from "react-router-dom";
+
+
+import routes from "./Router";
+import renderRoutes from "./utils/renderRoutes";
+
+import "./styles/index.css";
+function App(){
+    return<Suspense fallback={<Spin size="large" className="layout__loading" />}>
+        <HashRouter>
+      {renderRoutes(routes)}
+      <Route path="/login" exact render={() => <Redirect to="/login" />} />
+    </HashRouter></Suspense> 
 }
 
-export default App;
+export default App

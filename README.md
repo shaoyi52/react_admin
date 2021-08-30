@@ -14,6 +14,7 @@
 - [x] Ts 引入
 - [ ] scp2 自动部署 =》前端自动化构建历程
 - [ ] Hooks [useState](http://zhuanlan.zhihu.com/p/65773322)
+- [ ] css 全局引入，局部引入
 
 ## 目标：
 
@@ -31,6 +32,10 @@ react+ts+redux+scss
 
 #### 使用接口方法
 
+#### react 使用注意组件
+
+- React.Suspense 主要用于组件使用懒加载加载前显示内容；
+
 #### 使用包
 
 react-grid-layout
@@ -45,6 +50,7 @@ React DnD //拖放库
 #### 参考资料
 
 1. [表头拖拽功能](https://blog.csdn.net/weixin_43777074/article/details/106491709)
+2. [免费在线数据库推鉴](https://www.sibida.vip/article/125931)
 
 ## 通过 Create React App 创建基楚架构
 

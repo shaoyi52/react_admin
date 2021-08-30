@@ -1,3 +1,4 @@
+import React from 'react';
 import AsyncComponent from "./utils/asyncComponent";
 const path = require("path");
 const files = require.context("./pages", true, /\.js$/);
@@ -18,7 +19,7 @@ const SecondLevelComponent = AsyncComponent(() =>
   import("./common/SecondLevelComponent")
 );
 
-const routes = [
+const routes = [  
   { path: "/login", component: Login },
   {
     path: "/layout",
@@ -135,6 +136,13 @@ const routes = [
         ],
       },
     ],
+  },
+  {
+    path: '/register',
+    component: React.lazy(() => import('./views/login/index.tsx')),
+    meta: {
+      title: '注册',
+    },
   },
   { path: "/home", exact: true, component: Home },
 ];
