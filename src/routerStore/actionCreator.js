@@ -1,5 +1,13 @@
+/*
+ * @Author: yuzhoufen
+ * @Date: 2020-09-09 17:48:04
+ * @LastEditors: yuzhoufen
+ * @LastEditTime: 2021-11-01 12:06:16
+ * @Description: Do not edit
+ * @FilePath: \my-app\src\routerStore\actionCreator.js
+ */
 import { AUTH_CHANGE, PERMISSION_CHANGE, CURRENT_CHANGE } from "./actionTypes";
-import routes from "../Router";
+import routes from "../router/config.tsx";
 import { filterRoutes } from "../utils";
 import {
   recursionRouter,

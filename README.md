@@ -16,6 +16,14 @@
 - [ ] Hooks [useState](http://zhuanlan.zhihu.com/p/65773322)
 - [ ] css 全局引入，局部引入
 
+## page
+
+｜---index.tsx //挂载页
+｜---app.tsx //主引入页
+｜---config.tsx //配置页
+｜---src //编辑页类
+｜----views //视图页
+
 ## 目标：
 
 react+ts+redux+scss

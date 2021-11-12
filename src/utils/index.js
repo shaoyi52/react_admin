@@ -2,7 +2,7 @@ import fetch from "./fetch";
 import React from "react";
 import { Menu, Icon, Breadcrumb, Select } from "antd";
 import { Link } from "react-router-dom";
-
+import LocalStore from './store/index.tsx'
 const Option = Select.Option;
 const { SubMenu } = Menu;
 const MenuItem = Menu.Item;
@@ -44,4 +44,4 @@ export function filterRoutes(pathName) {
   paths.splice(0, 1);
   return paths;
 }
-export default { fetch, getMenuItem, filterRoutes };
+export default { fetch, getMenuItem, filterRoutes ,LocalStore};
