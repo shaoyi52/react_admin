@@ -1,5 +1,3 @@
-"use strict";
-
 const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
@@ -52,7 +50,7 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-process.traceDeprecation = true
+process.traceDeprecation = true;
 module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === "development";
   const isEnvProduction = webpackEnv === "production";
@@ -681,6 +679,7 @@ module.exports = function (webpackEnv) {
     performance: false,
     devServer: {
       contentBase: "./dist/",
+      before: require("../mock/mock_server.js"),
       proxy: {
         //'/v1/*': 'http://192.168.2.12:8016',
         //'/v2/*': 'http://dev-gs.aierp.cn:8089',
