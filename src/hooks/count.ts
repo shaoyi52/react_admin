@@ -12,17 +12,17 @@ function useCount(defaultValue: number):[number, () => void,() => void]{
     };
 
     const beiginTimer=()=>{
-        setCount(value=>{
-            if(value ===0){
+        setCount(count=>{
+            if(count ===0){
                 closeTimer();
-                return defaultValue;
+                return count;
             }
 
             timer.current = setTimeout(()=>{
                 beiginTimer();
             },1000);
 
-            return value -1
+            return count -1
         })        
     }
 
